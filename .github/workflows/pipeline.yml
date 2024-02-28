@@ -1,5 +1,10 @@
 name: CI/CD Pipeline
 
+defaults:
+  run:
+    working-directory: modern-web-app
+env:
+  NODE_VERSION: "20.9.0"
 on: push
 jobs:
   test:
@@ -37,9 +42,4 @@ jobs:
         with:
           name: modern-web-app-${{ github.sha }}
           path: modern-web-app/.next/
-defaults:
-  run:
-    working-directory: modern-web-app
-env:
-  NODE_VERSION: "20.9.0"
 
